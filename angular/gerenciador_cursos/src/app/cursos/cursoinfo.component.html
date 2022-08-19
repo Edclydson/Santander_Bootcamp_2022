@@ -1,0 +1,46 @@
+<h3>Informações do Curso</h3>
+<hr/>
+<form #cursoForm='ngForm'>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-from-label">Nome:</label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="curso.nome" required name="nome" #cursoNome="ngModel" [ngClass]="{'is-invalid':cursoNome.invalid}">
+            <div class="invalid-feedback">
+                <span>O nome é necessário!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label class="col-sm-2 col-from-label">Preço:</label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="curso.preco" required name="preco" #cursoPreco="ngModel" [ngClass]="{'is-invalid':cursoPreco.invalid}">
+            <div class="invalid-feedback">
+                <span>O preço é necessário!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label class="col-sm-2 col-from-label">Avaliação:</label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="curso.avaliacao" required name="avaliacao" #cursoAvaliacao="ngModel" [ngClass]="{'is-invalid':cursoAvaliacao.invalid}">
+            <div class="invalid-feedback">
+                <span>A avaliação é necessária!</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <label class="col-sm-2 col-from-label">Duração:</label>
+        <div class="col-sm-10">
+            <input class="form-control" [(ngModel)]="curso.duracao" required name="duracao" #cursoDuracao="ngModel" [ngClass]="{'is-invalid':cursoDuracao.invalid}">
+            <div class="invalid-feedback">
+                <span>A duração é necessária!</span>
+            </div>
+        </div>
+    </div><br>
+    <button class="btn btn-primary mr-10" [disabled]="cursoForm.invalid" (click)="salvar()">Salvar</button>
+    <button class="btn btn-secondary" [routerLink]="['/cursos']">Voltar</button>
+</form>

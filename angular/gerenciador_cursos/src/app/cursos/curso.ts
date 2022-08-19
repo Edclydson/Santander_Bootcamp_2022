@@ -6,4 +6,7 @@ export class Curso{
     codigo: string = "";
     duracao: number = 0;
     avaliacao: number = 0;
+    descricao: string = "";
+    data: string = "";
+    
 }
